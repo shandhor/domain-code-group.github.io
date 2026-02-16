@@ -2,19 +2,23 @@
 <html lang="en" data-critters-container>
 <head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <script type="text/javascript">
+    // هذا الجزء هو المسؤول عن فك التشفير وإعادة الرابط لشكلة الطبيعي
     (function(l) {
-      if (l.search[1] === '/' ) {
+      if (l.search && l.search.indexOf('p=/') > -1) {
         var decoded = l.search.slice(1).split('&').map(function(s) { 
           return s.replace(/~and~/g, '&') 
-        }).join('?');
+        }).filter(function(s) {
+          return s.slice(0, 2) === 'p=';
+        })[0].slice(2);
+
         window.history.replaceState(null, null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+          l.pathname.slice(0, -1) + decoded + l.hash
         );
       }
     }(window.location))
   </script>
 
-  <base href="/"> <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
   <meta charset="utf-8">
      <title>Domain Code Group | حلول رقمية متكاملة</title>
   <!-- <base href="/domain-code-group.github.io/"> -->
