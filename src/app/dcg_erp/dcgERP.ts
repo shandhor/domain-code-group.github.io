@@ -152,5 +152,25 @@ export class DcgERP implements OnInit {
       keywords: 'نظام ERP تمليك، برنامج محاسبة سحابي، ربط سلة وزد، الفاتورة الإلكترونية السعودية، نظام إدارة مصانع',
       image: 'https://domaincodegroup.com/assets/images/logo.png'
     });
+    this.seo.updateCanonicalUrl('https://domaincodegroup.com/app/dcgERP');
+    this.seo.addStructuredData({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      'name': 'DomainCode ERP System',
+      'operatingSystem': 'Web, Windows, Android, iOS',
+      'applicationCategory': 'BusinessApplication',
+      'offers': {
+        '@type': 'AggregateOffer',
+        'lowPrice': '2500',
+        'highPrice': '12000',
+        'priceCurrency': 'SAR',
+        'offerCount': '4'
+      },
+      'aggregateRating': {
+        '@type': 'AggregateRating',
+        'ratingValue': '4.9',
+        'reviewCount': '124'
+      }
+    }, 'page-structured-data');
   }
 }

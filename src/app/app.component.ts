@@ -187,14 +187,19 @@ whyUs = signal([
     setTimeout(() => this.isSubmitting.set(false), 2000);
   }
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    // في الـ ngOnInit الخاص بالصفحة الرئيسية
-  this.seo.updateMetaTags({
-  title: 'مجموعة دومين كود (DG) | حلول البرمجيات والتحول الرقمي',
-  description: 'نقدم حلولاً تقنية متكاملة من تطوير المواقع إلى أنظمة ERP المتطورة. شريككم في النجاح الرقمي بالمملكة العربية السعودية.',
-  keywords: 'مجموعة كود النطاق، تطوير برمجيات، تصميم مواقع، تحول رقمي السعودية، DG',
-  image: 'https://domaincodegroup.com/assets/images/logo.png' // صورة مخصصة لوسائل التواصل الاجتماعي
-});
+    this.seo.updateMetaTags({
+      title: 'مجموعة دومين كود (DG) | حلول البرمجيات والتحول الرقمي',
+      description: 'نقدم حلولاً تقنية متكاملة من تطوير المواقع إلى أنظمة ERP المتطورة. شريككم في النجاح الرقمي بالمملكة العربية السعودية.',
+      keywords: 'مجموعة كود النطاق، تطوير برمجيات، تصميم مواقع، تحول رقمي السعودية، DG',
+      image: 'https://domaincodegroup.com/assets/images/logo.png'
+    });
+    this.seo.updateCanonicalUrl('https://domaincodegroup.com/');
+    this.seo.addStructuredData({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'Domain Code Group',
+      'url': 'https://domaincodegroup.com',
+      'inLanguage': 'ar'
+    }, 'page-structured-data');
   }
 }
