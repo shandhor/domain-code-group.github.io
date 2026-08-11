@@ -27,9 +27,11 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/sitemap.xml",
+              "src/googled08af12d52142e9c.html"
             ],
-            "styles": [
+            "styles": [ 
               "src/styles.scss"
             ],
             "scripts": []
@@ -90,15 +92,29 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/sitemap.xml",
+              "src/googled08af12d52142e9c.html"
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "dir": "dist/domain-code-group",
+    "repo": "https://github.com/shandhor/domain-code-group.github.io.git",
+    "name": "Shandhor",
+    "email": "mohammedshan92@hotmail.com"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
