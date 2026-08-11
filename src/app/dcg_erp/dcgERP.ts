@@ -146,7 +146,6 @@ export class DcgERP implements OnInit {
   constructor(private seo: SeoService) {}   
 
   ngOnInit(): void {
-    debugger;
     this.seo.updateMetaTags({
       title: 'نظام DomainCode ERP المتكامل | تمليك لمرة واحدة بدون اشتراك شهري',
       description: 'النظام الأقوى لإدارة المبيعات، المستودعات، والموارد البشرية مع ربط مباشر للمتاجر الإلكترونية (سلة وزد). احصل على عرض التمليك المحدود الآن.',
