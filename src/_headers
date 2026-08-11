@@ -1,0 +1,31 @@
+# Security headers (all paths)
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Hashed JS bundles — safe to cache forever
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Hashed CSS bundles — safe to cache forever
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Un-hashed assets (images, fonts) — 7 days
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Favicon — 1 day
+/favicon.ico
+  Cache-Control: public, max-age=86400
+
+# HTML pages — revalidate hourly so SEO updates ship quickly
+/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Root and prerendered route indexes
+/
+  Cache-Control: public, max-age=3600, must-revalidate

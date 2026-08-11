@@ -29,7 +29,13 @@
               "src/favicon.ico",
               "src/assets",
               "src/sitemap.xml",
-              "src/googled08af12d52142e9c.html"
+              "src/robots.txt",
+              "src/googled08af12d52142e9c.html",
+              {
+                "glob": "_headers",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [ 
               "src/styles.scss"
@@ -94,7 +100,13 @@
               "src/favicon.ico",
               "src/assets",
               "src/sitemap.xml",
-              "src/googled08af12d52142e9c.html"
+              "src/robots.txt",
+              "src/googled08af12d52142e9c.html",
+              {
+                "glob": "_headers",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"

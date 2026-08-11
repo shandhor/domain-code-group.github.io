@@ -159,17 +159,10 @@ export class DcgERP implements OnInit {
       'name': 'DomainCode ERP System',
       'operatingSystem': 'Web, Windows, Android, iOS',
       'applicationCategory': 'BusinessApplication',
-      'offers': {
-        '@type': 'AggregateOffer',
-        'lowPrice': '2500',
-        'highPrice': '12000',
-        'priceCurrency': 'SAR',
-        'offerCount': '4'
-      },
-      'aggregateRating': {
-        '@type': 'AggregateRating',
-        'ratingValue': '4.9',
-        'reviewCount': '124'
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Domain Code Group',
+        'url': 'https://domaincodegroup.com'
       }
     }, 'page-structured-data');
   }
