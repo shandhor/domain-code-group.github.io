@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/domain-code-group",
+            "outputPath": "dist/domain-code-group/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -105,11 +105,64 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "dir": "dist/domain-code-group",
+            "dir": "dist/domain-code-group/browser",
     "repo": "https://github.com/shandhor/domain-code-group.github.io.git",
     "name": "Shandhor",
     "email": "mohammedshan92@hotmail.com"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/domain-code-group/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "domainCodeGroup:build:development",
+              "serverTarget": "domainCodeGroup:server:development"
+            },
+            "production": {
+              "browserTarget": "domainCodeGroup:build:production",
+              "serverTarget": "domainCodeGroup:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routesFile": "src/prerender-routes.txt"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "domainCodeGroup:build:production",
+              "serverTarget": "domainCodeGroup:server:production"
+            },
+            "development": {
+              "browserTarget": "domainCodeGroup:build:development",
+              "serverTarget": "domainCodeGroup:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
