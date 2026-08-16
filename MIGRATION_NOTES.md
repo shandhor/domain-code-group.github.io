@@ -330,3 +330,96 @@ git checkout 6dee0bd
 ```
 
 **تحذير**: `git reset --hard` يحذف كل الـ commits اللاحقة. تأكد من دفع الحالة الحالية إلى remote branch قبل الـ reset.
+
+---
+
+# Phase 2 — AI/SEO Enhancement (2026-08-16)
+
+توسعة SEO تستهدف AI answer engines (Claude, ChatGPT, Perplexity, Gemini) + محركات البحث التقليدية + معيار `llms.txt` الحديث + صفحة FAQ.
+
+## الملفات الجديدة
+
+| الملف | الغرض |
+|-------|-------|
+| `src/llms.txt` | Markdown بمعلومات الشركة مصمّم لـ AI crawlers (تخطيط للمعيار الحديث `/llms.txt`) |
+| `src/app/pages/faq/faq.component.ts` | 12 سؤال ثنائي اللغة + FAQPage schema + SeoService integration |
+| `src/app/pages/faq/faq.component.html` | template بنمط بصري مطابق لباقي الموقع (glass + gradient + accordion) |
+| `src/app/pages/faq/faq.component.scss` | scoped: `.glass`, `.gradient-text`, `.gradient-bg`, animations |
+
+## الملفات المعدلة
+
+| الملف | التغيير |
+|-------|---------|
+| `src/robots.txt` | استبدال بقائمة موسعة (27 User-agent): GPTBot, ClaudeBot (+Claude-Web/anthropic-ai), PerplexityBot, Google-Extended, Applebot-Extended, CCBot, Meta, Bytespider, Amazonbot, cohere-ai، وباقي المحركات التقليدية |
+| `src/index.html` | Organization schema محسّنة: `@id`, `alternateName` array، founder (Mohammed Shanzour)، locations array (4 مدن)، areaServed موسع لـ 8 دول، `knowsAbout`, `makesOffer`, contact بلغتين |
+| `src/app/app-routing.module.ts` | إضافة `{ path: 'faq', component: FaqComponent }` |
+| `src/app/app.module.ts` | إضافة `FaqComponent` للـ declarations |
+| `src/app/app.component.ts` | تحديث NavigationEnd handler: `showStatic` يخفي static home على أي route غير `/` (بدل التحقق فقط من `/app/dcgERP`) — ضروري لظهور FAQ لوحده |
+| `src/prerender-routes.txt` | إضافة `/faq` |
+| `src/sitemap.xml` | إضافة `/faq` (priority 0.8)، تحديث `lastmod` لكل الصفحات إلى `2026-08-16` |
+| `angular.json` | إضافة `src/llms.txt` لقائمة assets (build + test) |
+
+## الميزات المضافة
+
+- **صفحة FAQ** مع 12 سؤال (عربي/إنجليزي) + accordion تفاعلي + CTA WhatsApp
+- **FAQPage structured data** (JSON-LD) بصيغة schema.org — 12 Question / Answer pair بالعربية
+- **AI crawlers مسموح لهم صراحة** في robots.txt (ChatGPT, Claude, Perplexity, Gemini, Apple Intelligence, وغيرهم)
+- **`llms.txt` file** — معيار حديث يعطي AI crawlers ملخص منظم بـ Markdown عن الشركة والمنتجات والأسعار
+- **Enhanced Organization schema** بمعلومات المؤسس، 4 مواقع، 8 دول areaServed، 12 مجال خبرة، عرض SoftwareApplication
+
+## Build metrics (بعد التحسين)
+
+```
+main.js         : 81.99 kB (transfer, +3.6 kB من phase 1)
+styles.css      :  4.27 kB (transfer, +0.1 kB — FAQ component styles minimal)
+polyfills.js    : 11.36 kB (unchanged)
+runtime.js      :  0.51 kB (unchanged)
+Total initial   : 98.14 kB (transfer)
+
+Prerendered pages: 3
+  /             : 73,136 bytes  (grew من enhanced Organization schema)
+  /app/dcgERP   : 55,181 bytes  (grew من نفس السبب)
+  /faq          : 52,702 bytes  (جديد)
+
+Errors: 0 | Warnings: 0 | Build time: ~25s
+```
+
+## نتائج التحقق (curl)
+
+- ✅ `/robots.txt`: 27 User-agent entries تشمل GPTBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot, CCBot، إلخ
+- ✅ `/llms.txt`: يخدم Markdown 3,859 bytes
+- ✅ `/faq`: HTTP 200، title/description عربية FAQ-specific، canonical `/faq`، 12 accordion buttons في HTML البصري، 12 Question في JSON-LD
+- ✅ لا leak لمحتوى الصفحة الرئيسية على `/faq` (بفضل تحديث `showStatic`)
+- ✅ WhatsApp CTA link صحيح: `wa.me/966561316069`
+- ✅ 404 route غير معروف: HTTP 404 صحيح (لا SPA fallback يخفي المشكلة)
+- ✅ Structured data:
+  - `/`: Organization + WebSite
+  - `/app/dcgERP`: Organization + SoftwareApplication
+  - `/faq`: Organization + WebSite + FAQPage (12 Q/A)
+
+## قرارات تصميم مختصرة
+
+1. **لم أضف رابط FAQ في القائمة الرئيسية** — القيد كان "لا تغير أي محتوى مرئي في الصفحات الحالية". Google/AI crawlers ستكتشف الصفحة عبر `sitemap.xml` و`llms.txt` بدون رابط ظاهر.
+2. **Tailwind inline بدل مكتبة SCSS منفصلة** — matches باقي الموقع (طول faq.component.scss فقط ~30 سطر لتعريف classes scoped).
+3. **`showStatic` صار "hide-on-any-non-root"** — بدلاً من قائمة routes محدد. يبقى محافظاً على السلوك الحالي (home يعرض static, ERP يخفيه) ويعمل لأي route جديد تلقائياً.
+4. **`@angular/router` `component:` بدل `loadComponent:`** — التطبيق NgModule-based، والصفحة صغيرة (~10 kB) فلا داعي لـ lazy loading.
+5. **`aggregateRating`/`offers` الوهمية بقيت محذوفة** (من phase 1) — لم أستعدها.
+
+## الخطوات اليدوية المطلوبة بعد النشر
+
+1. **Google Search Console**:
+   - أثبت ملكية الدومين (لديك ملف `googled08af12d52142e9c.html` موجود)
+   - قدّم `https://domaincodegroup.com/sitemap.xml`
+   - راجع Rich Results لكل صفحة: FAQPage, Organization, SoftwareApplication
+2. **Bing Webmaster Tools**: أضف الموقع وقدّم نفس sitemap
+3. **Rich Results Test** (اختبار Google): https://search.google.com/test/rich-results
+   - `/` → متوقع: Organization + WebSite
+   - `/app/dcgERP` → متوقع: Organization + SoftwareApplication
+   - `/faq` → متوقع: Organization + WebSite + FAQPage (12 questions)
+4. **Schema.org validator**: https://validator.schema.org/
+5. **زمن الاكتشاف**: AI crawlers تحتاج 2-4 أسابيع لتضمين المحتوى الجديد في نتائجها. Google أسرع (أيام إلى أسبوع بعد submitting sitemap).
+
+## Commit جديد
+
+هذا التحسين يضاف كـ commit تاسع فوق الترحيل الأصلي.
+

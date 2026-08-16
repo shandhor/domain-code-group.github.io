@@ -166,9 +166,11 @@ whyUs = signal([
   ) {
     this.router.events.subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
-        // hide static content when navigating to /app/dcgERP
+        // Only the root path shows the static homepage; every other
+        // route (e.g. /app/dcgERP, /faq) is a standalone routed page.
         const url = evt.urlAfterRedirects || '';
-        this.showStatic.set(!url.startsWith('/app/dcgERP'));
+        const path = url.split('?')[0].split('#')[0];
+        this.showStatic.set(path === '/' || path === '');
       }
     });
   }

@@ -1,0 +1,37 @@
+:host { display: block; }
+
+.font-cairo { font-family: 'Cairo', sans-serif; }
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px rgba(255, 255, 255, 0.08) solid;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+}
+
+.animate-float {
+  animation: faq-float 6s ease-in-out infinite;
+}
+
+@keyframes faq-float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -20px); }
+}
+
+.faq-answer {
+  animation: faq-fade-in 0.3s ease;
+}
+
+@keyframes faq-fade-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

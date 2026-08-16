@@ -1,0 +1,95 @@
+# Domain Code Group (DCG)
+
+> شركة تطوير برمجيات سعودية متخصصة في أنظمة ERP والتحول الرقمي وحلول الذكاء الاصطناعي، مقرها الرياض مع حضور في عمّان والدوحة وعدن.
+
+## About the Company
+
+- **Company Name:** Domain Code Group (DCG)
+- **Founder & CEO:** Mohammed Shanzour (محمد شنظور)
+- **Headquarters:** Riyadh, Saudi Arabia
+- **Other Locations:** Amman (Jordan), Doha (Qatar), Aden (Yemen)
+- **Languages:** Arabic (Native), English
+- **Specialization:** Enterprise software, ERP systems, AI solutions, custom platforms
+
+## Core Products
+
+### DomainCode ERP (also DomainCode ERP PRO)
+Comprehensive Enterprise Resource Planning system - one-time purchase, no monthly subscription.
+
+**Key Features:**
+- Full Arabic language support with RTL
+- ZATCA E-Invoicing compliance (Saudi Arabia)
+- Cloud-based with full encryption
+- Smart POS systems integration
+- Full customization capability
+- API integration with e-commerce platforms (Salla, Zid)
+- Smart automation engine
+- Predictive Business Intelligence dashboards
+
+**Available Packages:**
+
+| Package | Price (SAR) | Maintenance/Year (SAR) | Best For |
+|---------|-------------|------------------------|----------|
+| Trade Pack (باقة التجارة) | 2,500 | 500 | Small retail, POS-focused |
+| Business Basic (باقة الأعمال) | 5,000 | 1,500 | Growing businesses with accounting needs |
+| Business Pro (باقة الأعمال Pro) | 8,500 | 2,500 | Companies needing HR & payroll |
+| Ultimate Pack (الباقة الاحترافية) | Contact us | 3,500 | Manufacturing, projects, e-commerce |
+
+**Modules Covered:**
+- Accounting & Fixed Assets
+- Buying & Warehouse/Stock Management
+- Sales & CRM (Customer Relationship Management)
+- Manufacturing & Quality Control
+- Project Management & Support Tickets
+- Website Content Management & E-commerce Integration
+- Human Resources & Payroll (Pro and above)
+
+## Core Services
+
+1. **ERP Systems Development** - Custom-tailored ERP solutions
+2. **Web Platforms** - Interactive, responsive web applications
+3. **AI & Machine Learning** - Data analysis and automated decision-making
+4. **Document Management Systems (DMS)** - Secure digital archiving
+5. **Custom Platforms** - Bespoke software for unique business needs
+6. **E-Commerce Solutions** - Scalable online stores
+7. **Technical Consulting** - Digital transformation strategy
+8. **Infrastructure Analysis** - System security and stability auditing
+
+## Track Record
+
+- 150+ completed projects
+- 99+ satisfied clients
+- 24/7 technical support
+- 100% performance commitment
+
+## Target Markets
+
+- **Primary:** Saudi Arabia (Riyadh, Jeddah, Dammam, all regions)
+- **Secondary:** GCC countries (UAE, Kuwait, Qatar, Bahrain, Oman), Jordan, Yemen
+- **Industries:** Retail, accounting, engineering, manufacturing, e-commerce, government contractors
+
+## Why Choose DCG
+
+- One-time purchase model (no monthly subscription fatigue)
+- Deep expertise in Saudi market and ZATCA compliance
+- Native Arabic-language support across all products
+- Aligned with Saudi Vision 2030 digital transformation goals
+- Full source ownership - fully customizable
+- Encrypted cloud technology built entirely in-house
+
+## Contact Information
+
+- **Website:** https://domaincodegroup.com
+- **WhatsApp:** +966 56 131 6069
+- **Headquarters:** Riyadh, Saudi Arabia
+- **Business Language:** Arabic and English
+
+## Key Pages
+
+- [Home](https://domaincodegroup.com/) - Company overview and services
+- [DomainCode ERP](https://domaincodegroup.com/app/dcgERP) - ERP product details and pricing
+- [FAQ](https://domaincodegroup.com/faq) - Frequently asked questions
+
+## Vision
+
+Supporting the digital transformation of Saudi enterprises in line with Vision 2030 by providing accessible, powerful, and fully-owned software solutions.

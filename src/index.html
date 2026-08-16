@@ -23,32 +23,112 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://domaincodegroup.com/#organization",
     "name": "Domain Code Group",
-    "alternateName": "DCG",
+    "alternateName": ["DCG", "دومين كود جروب", "مجموعة دومين كود"],
     "url": "https://domaincodegroup.com",
-    "logo": "https://domaincodegroup.com/assets/images/logo.png",
-    "description": "شركة متخصصة في تطوير البرمجيات، أنظمة ERP، وحلول التحول الرقمي للمنشآت في المملكة العربية السعودية والشرق الأوسط.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://domaincodegroup.com/assets/images/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "شركة تطوير برمجيات سعودية متخصصة في أنظمة ERP وحلول التحول الرقمي والذكاء الاصطناعي",
     "email": "info@domaincodegroup.com",
     "telephone": "+966561316069",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+966561316069",
-      "contactType": "customer support",
-      "email": "info@domaincodegroup.com",
-      "areaServed": ["SA", "JO", "QA", "YE"],
-      "availableLanguage": ["Arabic", "English"]
+    "founder": {
+      "@type": "Person",
+      "name": "Mohammed Shanzour",
+      "alternateName": "محمد شنظور",
+      "jobTitle": "Founder & CEO"
+    },
+    "foundingLocation": {
+      "@type": "Place",
+      "name": "Riyadh, Saudi Arabia"
     },
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "SA",
-      "addressLocality": "Riyadh"
+      "addressLocality": "Riyadh",
+      "addressRegion": "Riyadh Province",
+      "addressCountry": "SA"
     },
+    "location": [
+      {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Riyadh",
+          "addressCountry": "SA"
+        }
+      },
+      {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Amman",
+          "addressCountry": "JO"
+        }
+      },
+      {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Doha",
+          "addressCountry": "QA"
+        }
+      },
+      {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Aden",
+          "addressCountry": "YE"
+        }
+      }
+    ],
     "areaServed": [
       { "@type": "Country", "name": "Saudi Arabia" },
-      { "@type": "Country", "name": "Jordan" },
+      { "@type": "Country", "name": "United Arab Emirates" },
+      { "@type": "Country", "name": "Kuwait" },
       { "@type": "Country", "name": "Qatar" },
+      { "@type": "Country", "name": "Bahrain" },
+      { "@type": "Country", "name": "Oman" },
+      { "@type": "Country", "name": "Jordan" },
       { "@type": "Country", "name": "Yemen" }
     ],
+    "knowsAbout": [
+      "DomainCode ERP",
+      "Enterprise Resource Planning",
+      "ZATCA E-Invoicing Compliance",
+      "ASP.NET Core Development",
+      "Angular Development",
+      "AI Solutions",
+      "Arabic NLP",
+      "E-commerce Development",
+      "Business Intelligence",
+      "Document Management Systems",
+      "Digital Transformation",
+      "Saudi Vision 2030"
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "DomainCode ERP",
+          "applicationCategory": "BusinessApplication",
+          "description": "نظام تخطيط موارد المؤسسات متوافق مع الفوترة الإلكترونية السعودية"
+        }
+      }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+966561316069",
+      "contactType": "Sales",
+      "email": "info@domaincodegroup.com",
+      "areaServed": ["SA", "AE", "KW", "QA", "BH", "OM", "JO", "YE"],
+      "availableLanguage": ["Arabic", "English"]
+    },
     "sameAs": [
       "https://sa.linkedin.com/company/domain-code-group"
     ]

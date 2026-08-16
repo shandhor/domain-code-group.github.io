@@ -30,6 +30,7 @@
               "src/assets",
               "src/sitemap.xml",
               "src/robots.txt",
+              "src/llms.txt",
               "src/googled08af12d52142e9c.html",
               {
                 "glob": "_headers",
@@ -101,6 +102,7 @@
               "src/assets",
               "src/sitemap.xml",
               "src/robots.txt",
+              "src/llms.txt",
               "src/googled08af12d52142e9c.html",
               {
                 "glob": "_headers",
