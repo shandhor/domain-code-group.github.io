@@ -17,6 +17,10 @@ export class AppComponent {
   isArabic = computed(() => this.lang() === 'ar');
   isSubmitting = signal(false);
   mobileMenuOpen = signal<boolean>(false);
+  formStatus = signal<'idle' | 'sending' | 'success' | 'error'>('idle');
+  formName = signal<string>('');
+  formEmail = signal<string>('');
+  formMessage = signal<string>('');
 whyUs = signal([
     { icon: 'fas fa-medal', titleAr: 'جودة عالمية', titleEn: 'Global Quality', descAr: 'نلتزم بأعلى معايير البرمجة والهندسة.', descEn: 'Committed to top engineering standards.' },
     { icon: 'fas fa-users', titleAr: 'فريق خبير', titleEn: 'Expert Team', descAr: 'نخبة من المطورين بخبرات واسعة.', descEn: 'Elite developers with deep expertise.' },
@@ -91,7 +95,18 @@ whyUs = signal([
         locations_label: 'مواقعنا',
         locations_list: ['• الرياض - السعودية', '• عمان - الأردن', '• الدوحة - قطر', '• عدن - اليمن']
       },
-      form: { name: 'الاسم', email: 'البريد', message: 'التفاصيل', submit: 'إرسال', sending: 'جاري الإرسال...' },
+      form: {
+        name: 'الاسم',
+        email: 'البريد',
+        message: 'التفاصيل',
+        submit: 'إرسال',
+        sending: 'جاري الإرسال...',
+        success: '✅ تم استلام رسالتك بنجاح! سنتواصل معك قريباً',
+        error: '❌ حدث خطأ في الإرسال. الرجاء المحاولة مرة أخرى أو التواصل عبر الواتساب',
+        namePlaceholder: 'اكتب اسمك الكامل',
+        emailPlaceholder: 'example@email.com',
+        messagePlaceholder: 'اشرح لنا مشروعك أو استفسارك...'
+      },
       footer: { copy: '© 2026 جميع الحقوق محفوظة لشركة Domain Code Group' }
     },
     en: {
@@ -161,7 +176,18 @@ whyUs = signal([
         locations_label: 'Our Locations',
         locations_list: ['• Riyadh - KSA', '• Amman - Jordan', '• Doha - Qatar', '• Aden - Yemen']
       },
-      form: { name: 'Name', email: 'Email', message: 'Details', submit: 'Submit', sending: 'Sending...' },
+      form: {
+        name: 'Name',
+        email: 'Email',
+        message: 'Details',
+        submit: 'Submit',
+        sending: 'Sending...',
+        success: '✅ Your message has been received! We\'ll contact you soon',
+        error: '❌ Sending failed. Please try again or contact us via WhatsApp',
+        namePlaceholder: 'Enter your full name',
+        emailPlaceholder: 'example@email.com',
+        messagePlaceholder: 'Tell us about your project or inquiry...'
+      },
       footer: { copy: '© 2026 All rights reserved to Domain Code Group' }
     }
   };
@@ -208,10 +234,65 @@ whyUs = signal([
     this.closeMobileMenu();
   }
 
-  handleSubmit(event: Event) {
+  async handleSubmit(event: Event): Promise<void> {
     event.preventDefault();
+
+    if (!this.formName().trim() || !this.formEmail().trim() || !this.formMessage().trim()) {
+      return;
+    }
+
+    this.formStatus.set('sending');
     this.isSubmitting.set(true);
-    setTimeout(() => this.isSubmitting.set(false), 2000);
+
+    const formData = {
+      access_key: 'dfd0d838-bd49-4f56-b630-456c979ededb',
+      name: this.formName(),
+      email: this.formEmail(),
+      message: this.formMessage(),
+      subject: `رسالة جديدة من موقع Domain Code Group - ${this.formName()}`,
+      from_name: 'Domain Code Group Website',
+      botcheck: ''
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        this.formStatus.set('success');
+        this.formName.set('');
+        this.formEmail.set('');
+        this.formMessage.set('');
+
+        setTimeout(() => {
+          this.formStatus.set('idle');
+        }, 6000);
+      } else {
+        console.error('Web3Forms error:', result);
+        this.formStatus.set('error');
+
+        setTimeout(() => {
+          this.formStatus.set('idle');
+        }, 8000);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      this.formStatus.set('error');
+
+      setTimeout(() => {
+        this.formStatus.set('idle');
+      }, 8000);
+    } finally {
+      this.isSubmitting.set(false);
+    }
   }
   ngOnInit(): void {
     this.seo.updateMetaTags({
