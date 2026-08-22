@@ -13,6 +13,8 @@
             <a (click)="scrollTo('home')" class="nav-link cursor-pointer">{{ t().nav.home }}</a>
             <a (click)="scrollTo('services')" class="nav-link cursor-pointer">{{ t().nav.services }}</a>
             <a routerLink="/app/dcgERP" class="nav-link cursor-pointer">{{ t().nav.erp }}</a>
+            <a routerLink="/app/dcgCommerce" class="nav-link cursor-pointer">{{ t().nav.dcgCommerce }}</a>
+            <a routerLink="/app/dcgAI" class="nav-link cursor-pointer">{{ t().nav.dcgAI}}</a>
             <a (click)="scrollTo('consulting')" class="nav-link cursor-pointer">{{ t().nav.consulting }}</a>
             <a (click)="scrollTo('contact')" class="nav-link cursor-pointer">{{ t().nav.contact }}</a>
           </div>
@@ -52,6 +54,16 @@
             <button routerLink="/app/dcgERP"  class="gradient-bg px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition">
               {{ t().hero.cta_erp }}
             </button>
+            <button routerLink="/app/dcgCommerce"  class="gradient-bg px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition">
+              {{ t().hero.cta_commerce }}
+            </button>
+            <button routerLink="/app/dcgAI"  class="gradient-bg px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:scale-105 transition">
+              {{ t().hero.cta_ai }}
+            </button>
+            
+          </div>
+          <br>
+          <div class="flex flex-wrap justify-center gap-4">
             <a  (click)="scrollTo('services')" class="glass px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition border border-white/10 inline-block">
               {{ t().hero.cta_explore }}  
             </a>
@@ -61,6 +73,7 @@
             
           </div>
         </div>
+        
       </section>
  <!-- DCG ERP Section -->
       <section id="dcg_erp" class="py-24 px-6 bg-[#0a0e17] relative overflow-hidden">

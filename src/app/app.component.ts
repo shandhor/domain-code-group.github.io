@@ -1,6 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { SeoService } from './services/SeoService';
+import { DcgCommerce } from './pages/dcgCommerce/dcgCommerce';
+import { DcgAI } from './pages/dcgAI/dcgAI';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +24,7 @@ whyUs = signal([
   ]);
   translations: any = {
     ar: {
-      nav: { home: 'الرئيسية', services: 'خبراتنا', erp: 'نظام ERP', consulting: 'الاستشارات', contact: 'اتصل بنا' },
+      nav: { home: 'الرئيسية', services: 'خبراتنا', erp: 'نظام ERP',dcgCommerce: 'التجارة الإلكترونية', dcgAI: 'الذكاء الاصطناعي', consulting: 'الاستشارات', contact: 'اتصل بنا' },
       hero: {
         badge: 'شريكك الرقمي الموثوق',
         title: 'نحول <span class="gradient-text">الأفكار</span> إلى أكواد <br> وواقع رقمي مبهر',
@@ -30,7 +32,9 @@ whyUs = signal([
         cta_main: 'ابدأ مشروعك',
         cta_explore: 'استكشف خبراتنا',
         cta_consult: 'استشارة مجانية',
-        cta_erp: 'اكتشف DomainCode ERP PRO'
+        cta_erp: 'اكتشف DomainCode ERP PRO',
+        cta_commerce: 'اكتشف DCG Commerce',
+        cta_ai: 'اكتشف DCG AI'
       },
       services_section: { 
         title: 'خبراتنا', 
@@ -90,7 +94,7 @@ whyUs = signal([
       footer: { copy: '© 2026 جميع الحقوق محفوظة لشركة Domain Code Group' }
     },
     en: {
-      nav: { home: 'Home', services: 'Expertise',  erp: 'ERP System', consulting: 'Consulting', contact: 'Contact' },
+      nav: { home: 'Home', services: 'Expertise',  erp: 'ERP System', dcgCommerce: 'DCG Commerce', dcgAI: 'DCG AI', consulting: 'Consulting', contact: 'Contact' },
       hero: {
         badge: 'Your Trusted Digital Partner',
         title: 'Turning <span class="gradient-text">Ideas</span> into Code <br> and Stunning Digital Reality',
@@ -98,6 +102,8 @@ whyUs = signal([
         cta_main: 'Start Your Project',
         cta_explore: 'Our Expertise',
         cta_erp: 'Discover DomainCode ERP PRO',
+        cta_commerce: 'Discover DCG Commerce',
+        cta_ai: 'Discover DCG AI',
         cta_consult: 'Free Consultation'        
       },
       services_section: { 
