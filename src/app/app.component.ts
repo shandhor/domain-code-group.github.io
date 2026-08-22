@@ -16,6 +16,7 @@ export class AppComponent {
  lang = signal<'ar' | 'en'>('ar');
   isArabic = computed(() => this.lang() === 'ar');
   isSubmitting = signal(false);
+  mobileMenuOpen = signal<boolean>(false);
 whyUs = signal([
     { icon: 'fas fa-medal', titleAr: 'جودة عالمية', titleEn: 'Global Quality', descAr: 'نلتزم بأعلى معايير البرمجة والهندسة.', descEn: 'Committed to top engineering standards.' },
     { icon: 'fas fa-users', titleAr: 'فريق خبير', titleEn: 'Expert Team', descAr: 'نخبة من المطورين بخبرات واسعة.', descEn: 'Elite developers with deep expertise.' },
@@ -177,6 +178,7 @@ whyUs = signal([
         const url = evt.urlAfterRedirects || '';
         const path = url.split('?')[0].split('#')[0];
         this.showStatic.set(path === '/' || path === '');
+        this.closeMobileMenu();
       }
     });
   }
@@ -185,8 +187,25 @@ whyUs = signal([
     this.lang.set(this.lang() === 'ar' ? 'en' : 'ar');
   }
 
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen.set(!this.mobileMenuOpen());
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = this.mobileMenuOpen() ? 'hidden' : '';
+    }
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen.set(false);
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
+  }
+
   scrollTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+    this.closeMobileMenu();
   }
 
   handleSubmit(event: Event) {
