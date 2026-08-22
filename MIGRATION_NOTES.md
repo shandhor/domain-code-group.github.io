@@ -423,3 +423,96 @@ Errors: 0 | Warnings: 0 | Build time: ~25s
 
 هذا التحسين يضاف كـ commit تاسع فوق الترحيل الأصلي.
 
+---
+
+# Phase 3 — Product Pages Expansion (2026-08-23)
+
+توسعة بصمة الموقع لتغطي كل منتجات Domain Code Group: إضافة صفحتين منتج جديدتين (Commerce، AI) بنفس تصميم DomainCode ERP، مع تحديث llms.txt والـ Organization schema لتضمين المنتجات الجديدة.
+
+## الملفات الجديدة (6)
+
+| الملف | الغرض |
+|-------|-------|
+| `src/app/pages/dcgCommerce/dcgCommerce.ts` | DcgCommerce component: 6 features + 4 packages (3,500 - 14,000+ SAR) + SoftwareApplication schema |
+| `src/app/pages/dcgCommerce/dcgCommerce.html` | Template مستنسخ بنية DcgERP كاملة (نفس badges/glass/gradient/packages layout) |
+| `src/app/pages/dcgCommerce/dcgCommerce.scss` | Scoped styles مطابق دcgERP.scss (Cairo font, glass, gradient, card-hover, float) |
+| `src/app/pages/dcgAI/dcgAI.ts` | DcgAI component: 6 features + 4 packages (5,000 - 35,000+ SAR) + SoftwareApplication schema |
+| `src/app/pages/dcgAI/dcgAI.html` | نفس بنية dcgERP بمحتوى AI |
+| `src/app/pages/dcgAI/dcgAI.scss` | Scoped styles مطابق دcgERP.scss |
+
+## الملفات المعدلة (5)
+
+| الملف | التغيير |
+|-------|---------|
+| `src/index.html` | Organization schema: أضيف DomainCode Commerce و DomainCode AI في `knowsAbout` و `makesOffer` (3 SoftwareApplication offers الآن بدل 1) |
+| `src/app/app-routing.module.ts` | إضافة routes: `app/dcgCommerce` و `app/dcgAI` |
+| `src/app/app.module.ts` | إضافة `DcgCommerce` و `DcgAI` للـ declarations |
+| `src/prerender-routes.txt` | إضافة `/app/dcgCommerce` و `/app/dcgAI` (الإجمالي 5 routes) |
+| `src/sitemap.xml` | إضافة الصفحتين (priority 0.9)، تحديث `lastmod` لكل الصفحات إلى `2026-08-23` |
+| `src/llms.txt` | إعادة تنظيم: قسم Core Products الآن يضم DomainCode Commerce و DomainCode AI مع جداول أسعار كاملة (4 باقات لكل منتج) |
+
+## الميزات المضافة
+
+- **صفحة DomainCode Commerce** — منصة تجارة إلكترونية، 6 مميزات (بوابات دفع محلية، المخزون، الشحن، التسويق، تحليلات، SEO)، 4 باقات
+- **صفحة DomainCode AI** — حلول ذكاء اصطناعي بالعربية، 6 قدرات (نماذج لغوية، RAG، chatbots، تحليل مستندات، تنبؤية، رؤية حاسوبية)، 4 باقات
+- **SoftwareApplication schema لكل صفحة** (مع publisher = Organization)
+- **Organization schema محسّنة** — تشير الآن للمنتجات الثلاثة صراحة عبر `makesOffer` array
+- **llms.txt موسّع** — جداول أسعار مفصلة لكل منتج بلغتين
+
+## قرارات تصميم
+
+1. **نسخ SCSS بدل `@import`** — كل صفحة تحتوي على نسخة كاملة من styles، يمنع الاعتماد المتقاطع ويتيح تخصيص مستقبلي منفصل. الحجم الإضافي داخل budget الـ 2kB لكل component.
+2. **`showStatic` handler لم يُعدَّل** — كان بالفعل يخفي static home على أي route غير `/`، فيغطي dcgCommerce/dcgAI تلقائياً بدون تغيير.
+3. **لم أضف روابط للصفحات الجديدة في navbar** — القيد "لا تغير أي محتوى مرئي في الصفحات الحالية". الاكتشاف يتم عبر sitemap.xml و llms.txt و JSON-LD.
+4. **`component:` بدل `loadComponent:`** — تطبيق NgModule-based، والصفحتان صغيرتان (~10 kB each) فلا داعي للتحميل الكسول.
+5. **نفس رقم WhatsApp موحد** (966561316069) لكن رسالة WhatsApp تحتوي على اسم المنتج والباقة (تسهيل معالجة الاستفسارات).
+6. **`robots.txt` لم يُعدَّل** — قائمة AI crawlers الحالية (Phase 2) تغطي كل المطلوب.
+7. **FAQ page لم تُعدَّل** — بعض الأسئلة الحالية موجّهة لـ ERP فقط، لكن الصفحة أساساً تدعم Domain Code Group ككل. تحديث الأسئلة لتضمين Commerce/AI يمكن أن يتم في iteration لاحقة.
+
+## Build metrics
+
+```
+main.1313332fe5032780.js     : 85.31 kB (transfer, +3.3 kB من phase 2)
+polyfills.c916ef1a4d288290.js: 11.36 kB (unchanged)
+styles.514454f5c161005d.css  :  4.27 kB (unchanged)
+runtime.80c9d91f2427777c.js  :  0.51 kB
+Initial total                : 101.45 kB (transfer)
+
+Prerendered pages: 5 (كان 3)
+  /                        : يحتوي Organization بـ 3 SoftwareApplication offers
+  /app/dcgERP              : 55,920 bytes (باقات ERP بلا تغيير)
+  /app/dcgCommerce         : 56,260 bytes (جديد)
+  /app/dcgAI               : 56,472 bytes (جديد)
+  /faq                     : 53,441 bytes (بلا تغيير)
+
+Errors: 0 | Warnings: 0 | Build time: ~63s
+```
+
+## نتائج التحقق
+
+- ✅ 5 صفحات prerendered بنجاح
+- ✅ `/app/dcgCommerce/`: title Arabic، canonical صحيح، 4 SoftwareApplication schema references، كل باقات (البداية/النمو/الأعمال/المؤسسات) موجودة في HTML
+- ✅ `/app/dcgAI/`: title Arabic، canonical صحيح، 4 SoftwareApplication references، كل باقات AI موجودة
+- ✅ `/app/dcgERP/`: بدون أي تغيير (title/description/canonical/packages مطابقة لـ Phase 2)
+- ✅ لا تسرب لمحتوى static home على الصفحات الجديدة (`grep "شريكك الرقمي الموثوق"` = 0)
+- ✅ `/`: 3 SoftwareApplication في Organization.makesOffer
+- ✅ `/robots.txt`: 27 User-agents (بلا تغيير من Phase 2)
+- ✅ `/llms.txt`: يخدم Markdown بالمنتجات الثلاثة (~5 kB)
+- ✅ `/sitemap.xml`: 5 URLs
+
+## الخطوات اليدوية بعد النشر
+
+1. **Git push** إلى `master` branch — Cloudflare Pages ينشر تلقائياً
+2. **Google Search Console**: أعد تقديم `sitemap.xml` (يحتوي 2 URLs جديدة)
+3. **Rich Results Test** لكل صفحة جديدة:
+   - `/app/dcgCommerce` → متوقع: Organization + SoftwareApplication
+   - `/app/dcgAI` → متوقع: Organization + SoftwareApplication
+4. **راجع الأسعار المقترحة** — الأرقام الحالية في `dcgCommerce.ts` و `dcgAI.ts` مقترحة، عدّلها قبل الترويج
+5. **زمن الاكتشاف**: 
+   - Google: أيام إلى أسبوع بعد submit sitemap
+   - AI crawlers (Claude, ChatGPT, Perplexity, Gemini): 2-4 أسابيع
+
+## Commit جديد
+
+Phase 3 يضاف كـ commit عاشر فوق commits الترحيل + Phase 2.
+

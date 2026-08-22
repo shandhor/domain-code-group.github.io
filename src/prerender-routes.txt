@@ -1,3 +1,5 @@
 /
 /app/dcgERP
+/app/dcgCommerce
+/app/dcgAI
 /faq

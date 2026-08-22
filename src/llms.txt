@@ -1,6 +1,6 @@
 # Domain Code Group (DCG)
 
-> شركة تطوير برمجيات سعودية متخصصة في أنظمة ERP والتحول الرقمي وحلول الذكاء الاصطناعي، مقرها الرياض مع حضور في عمّان والدوحة وعدن.
+> شركة تطوير برمجيات سعودية متخصصة في أنظمة ERP والتجارة الإلكترونية وحلول الذكاء الاصطناعي، مقرها الرياض مع حضور في عمّان والدوحة وعدن.
 
 ## About the Company
 
@@ -9,24 +9,20 @@
 - **Headquarters:** Riyadh, Saudi Arabia
 - **Other Locations:** Amman (Jordan), Doha (Qatar), Aden (Yemen)
 - **Languages:** Arabic (Native), English
-- **Specialization:** Enterprise software, ERP systems, AI solutions, custom platforms
+- **Contact:** +966 56 131 6069
 
 ## Core Products
 
-### DomainCode ERP (also DomainCode ERP PRO)
+### 1. DomainCode ERP (DomainCode ERP PRO)
 Comprehensive Enterprise Resource Planning system - one-time purchase, no monthly subscription.
 
-**Key Features:**
-- Full Arabic language support with RTL
-- ZATCA E-Invoicing compliance (Saudi Arabia)
-- Cloud-based with full encryption
-- Smart POS systems integration
-- Full customization capability
-- API integration with e-commerce platforms (Salla, Zid)
-- Smart automation engine
-- Predictive Business Intelligence dashboards
+- Full Arabic support with RTL
+- ZATCA e-invoicing compliance
+- Smart POS integration
+- API integration with Salla, Zid
+- Modules: Accounting, Buying, Sales/CRM, Manufacturing, Projects, HR, E-commerce
 
-**Available Packages:**
+**Packages:**
 
 | Package | Price (SAR) | Maintenance/Year (SAR) | Best For |
 |---------|-------------|------------------------|----------|
@@ -35,25 +31,64 @@ Comprehensive Enterprise Resource Planning system - one-time purchase, no monthl
 | Business Pro (باقة الأعمال Pro) | 8,500 | 2,500 | Companies needing HR & payroll |
 | Ultimate Pack (الباقة الاحترافية) | Contact us | 3,500 | Manufacturing, projects, e-commerce |
 
-**Modules Covered:**
-- Accounting & Fixed Assets
-- Buying & Warehouse/Stock Management
-- Sales & CRM (Customer Relationship Management)
-- Manufacturing & Quality Control
-- Project Management & Support Tickets
-- Website Content Management & E-commerce Integration
-- Human Resources & Payroll (Pro and above)
+**URL:** https://domaincodegroup.com/app/dcgERP
+
+### 2. DomainCode Commerce
+E-commerce platform designed for the Saudi and GCC market.
+
+- Local payment gateways (Mada, Visa, MasterCard, Apple Pay, STC Pay)
+- Full RTL Arabic support
+- Mobile-first responsive design
+- SEO-optimized product pages
+- Integration with shipping providers (Aramex, SMSA, DHL)
+- Advanced inventory management
+- Multi-vendor marketplace capability
+- Multi-currency and multi-language support
+
+**Packages:**
+
+| Package | Price (SAR) | Maintenance/Year (SAR) | Best For |
+|---------|-------------|------------------------|----------|
+| Starter (البداية) | 3,500 | 750 | Up to 500 products, ready-made template |
+| Growth (النمو) | 7,500 | 1,800 | Unlimited products, all payment gateways |
+| Business (الأعمال) | 14,000 | 3,000 | Multi-vendor, mobile apps, advanced API |
+| Enterprise (المؤسسات) | Contact us | 5,000 | Dedicated hosting, ERP integration, B2B, SLA |
+
+**URL:** https://domaincodegroup.com/app/dcgCommerce
+
+### 3. DomainCode AI
+Arabic-first AI solutions for enterprises.
+
+- Custom LLM integration for Arabic language
+- Retrieval-Augmented Generation (RAG) systems
+- Document intelligence and analysis
+- AI-powered chatbots with Arabic understanding
+- Predictive analytics for business
+- Computer vision solutions
+- Voice recognition in Arabic dialects
+- Integration with existing ERP/CRM systems
+
+**Packages:**
+
+| Package | Price (SAR) | Maintenance/Year (SAR) | Best For |
+|---------|-------------|------------------------|----------|
+| Exploration (الاستكشاف) | 5,000 | 1,000 | Initial consulting + POC |
+| Implementation (التطبيق) | 15,000 | 3,500 | Custom AI solution + integration + training |
+| Production (الإنتاج) | 35,000 | 8,000 | Cloud hosting + 24/7 monitoring + full-year support |
+| Enterprise AI (المؤسسية) | Contact us | 15,000 | Custom LLM, on-premise, dedicated team, SLA |
+
+**URL:** https://domaincodegroup.com/app/dcgAI
 
 ## Core Services
 
-1. **ERP Systems Development** - Custom-tailored ERP solutions
-2. **Web Platforms** - Interactive, responsive web applications
-3. **AI & Machine Learning** - Data analysis and automated decision-making
-4. **Document Management Systems (DMS)** - Secure digital archiving
-5. **Custom Platforms** - Bespoke software for unique business needs
-6. **E-Commerce Solutions** - Scalable online stores
+1. **ERP Systems Development** - Custom-tailored solutions
+2. **E-Commerce Solutions** - Scalable online stores
+3. **AI & Machine Learning** - Data analysis and automation
+4. **Web Platforms** - Interactive web applications
+5. **Document Management Systems (DMS)** - Secure archiving
+6. **Custom Platforms** - Bespoke software
 7. **Technical Consulting** - Digital transformation strategy
-8. **Infrastructure Analysis** - System security and stability auditing
+8. **Infrastructure Analysis** - Security and stability auditing
 
 ## Track Record
 
@@ -64,32 +99,30 @@ Comprehensive Enterprise Resource Planning system - one-time purchase, no monthl
 
 ## Target Markets
 
-- **Primary:** Saudi Arabia (Riyadh, Jeddah, Dammam, all regions)
-- **Secondary:** GCC countries (UAE, Kuwait, Qatar, Bahrain, Oman), Jordan, Yemen
-- **Industries:** Retail, accounting, engineering, manufacturing, e-commerce, government contractors
+- **Primary:** Saudi Arabia (Riyadh, Jeddah, Dammam)
+- **Secondary:** GCC (UAE, Kuwait, Qatar, Bahrain, Oman), Jordan, Yemen
+- **Industries:** Retail, accounting, engineering, manufacturing, e-commerce, government
 
 ## Why Choose DCG
 
 - One-time purchase model (no monthly subscription fatigue)
 - Deep expertise in Saudi market and ZATCA compliance
-- Native Arabic-language support across all products
-- Aligned with Saudi Vision 2030 digital transformation goals
+- Native Arabic-language support
+- Aligned with Saudi Vision 2030
 - Full source ownership - fully customizable
-- Encrypted cloud technology built entirely in-house
+- Encrypted cloud technology built in-house
 
-## Contact Information
+## Key Pages
+
+- [Home](https://domaincodegroup.com/)
+- [DomainCode ERP](https://domaincodegroup.com/app/dcgERP)
+- [DomainCode Commerce](https://domaincodegroup.com/app/dcgCommerce)
+- [DomainCode AI](https://domaincodegroup.com/app/dcgAI)
+- [FAQ](https://domaincodegroup.com/faq)
+
+## Contact
 
 - **Website:** https://domaincodegroup.com
 - **WhatsApp:** +966 56 131 6069
 - **Headquarters:** Riyadh, Saudi Arabia
 - **Business Language:** Arabic and English
-
-## Key Pages
-
-- [Home](https://domaincodegroup.com/) - Company overview and services
-- [DomainCode ERP](https://domaincodegroup.com/app/dcgERP) - ERP product details and pricing
-- [FAQ](https://domaincodegroup.com/faq) - Frequently asked questions
-
-## Vision
-
-Supporting the digital transformation of Saudi enterprises in line with Vision 2030 by providing accessible, powerful, and fully-owned software solutions.
