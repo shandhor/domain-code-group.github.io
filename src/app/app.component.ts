@@ -38,8 +38,8 @@ whyUs = signal([
         cta_explore: 'استكشف خبراتنا',
         cta_consult: 'استشارة مجانية',
         cta_erp: 'اكتشف DomainCode ERP PRO',
-        cta_commerce: 'اكتشف DCG Commerce',
-        cta_ai: 'اكتشف DCG AI'
+        cta_commerce: 'اكتشف DomainCode Commerce',
+        cta_ai: 'اكتشف DomainCode AI'
       },
       services_section: { 
         title: 'خبراتنا', 
@@ -118,8 +118,8 @@ whyUs = signal([
         cta_main: 'Start Your Project',
         cta_explore: 'Our Expertise',
         cta_erp: 'Discover DomainCode ERP PRO',
-        cta_commerce: 'Discover DCG Commerce',
-        cta_ai: 'Discover DCG AI',
+        cta_commerce: 'Discover DomainCode Commerce',
+        cta_ai: 'Discover DomainCode AI',
         cta_consult: 'Free Consultation'        
       },
       services_section: { 
