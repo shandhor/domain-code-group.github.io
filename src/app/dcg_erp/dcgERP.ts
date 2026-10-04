@@ -95,8 +95,8 @@ export class DcgERP implements OnInit {
       popular: false, 
       maintenance: '1,500',
       isContactUs: false,
-      fAr: ['كل مزايا باقة التجارة', 'المحاسبة المالية المتكاملة', 'إدارة المخازن والمستودعات', 'تقارير الأرباح والخسائر'], 
-      fEn: ['All Trade Pack features', 'Integrated Accounting', 'Inventory Management', 'P&L Financial Reports'] 
+      fAr: ['كل مزايا باقة التجارة', 'المحاسبة المالية المتكاملة', 'إدارة المخازن والمستودعات','إدارة المبيعات والمشتريات', 'تقارير مالية ومحاسبية متقدمة'], 
+      fEn: ['All Trade Pack features', 'Integrated Accounting', 'Inventory Management','Sales & Purchasing','Advanced Financial Reports'] 
     },
     { 
       nameAr: 'باقة الأعمال Pro', 
