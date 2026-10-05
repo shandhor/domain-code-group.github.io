@@ -37,9 +37,9 @@ whyUs = signal([
         cta_main: 'ابدأ مشروعك',
         cta_explore: 'استكشف خبراتنا',
         cta_consult: 'استشارة مجانية',
-        cta_erp: 'اكتشف DomainCode ERP PRO',
-        cta_commerce: 'اكتشف DomainCode Commerce',
-        cta_ai: 'اكتشف DomainCode AI'
+        cta_erp: 'اكتشف دومين كود لتخطيط موارد المؤسسات (ERP)',
+        cta_commerce: 'اكتشف دومين كود للتجارة الإلكترونية',
+        cta_ai: 'اكتشف دومين كود للذكاء الاصطناعي'
       },
       services_section: { 
         title: 'خبراتنا', 
