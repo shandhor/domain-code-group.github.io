@@ -93,7 +93,7 @@ export class DcgCommerce implements OnInit {
       old: '5,500',
       popular: false,
       maintenance: '750',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['حتى 500 منتج', 'بوابات دفع أساسية', 'دعم فني عبر الإيميل', 'تصميم قالب جاهز'],
       fEn: ['Up to 500 products', 'Basic payment gateways', 'Email support', 'Ready-made template']
     },
@@ -104,7 +104,7 @@ export class DcgCommerce implements OnInit {
       old: '12,000',
       popular: true,
       maintenance: '1,800',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['منتجات لا محدودة', 'كل بوابات الدفع', 'دعم فني مباشر', 'تخصيص التصميم', 'تكامل شركات الشحن'],
       fEn: ['Unlimited products', 'All payment gateways', 'Priority support', 'Design customization', 'Shipping integration']
     },
@@ -115,7 +115,7 @@ export class DcgCommerce implements OnInit {
       old: '22,000',
       popular: false,
       maintenance: '3,000',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['كل مزايا النمو', 'متجر متعدد البائعين', 'تطبيق جوال iOS/Android', 'API متقدم', 'دعم فني 24/7'],
       fEn: ['All Growth features', 'Multi-vendor marketplace', 'iOS/Android mobile app', 'Advanced API', '24/7 support']
     },

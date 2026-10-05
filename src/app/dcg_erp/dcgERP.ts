@@ -79,13 +79,13 @@ export class DcgERP implements OnInit {
     { 
       nameAr: 'باقة التجارة', 
       nameEn: 'Trade Pack', 
-      price: '2,500', 
-      old: '4,500', 
+      price: '1000', 
+      old: '2000', 
       popular: false, 
       maintenance: '500',
-      isContactUs: false,
-      fAr: ['نظام مبيعات ومشتريات', 'نقاط بيع POS ذكية', 'الفاتورة الإلكترونية ZATCA', 'إدارة العملاء والموردين'], 
-      fEn: ['Sales & Buying System', 'Smart POS Systems', 'ZATCA E-Invoicing', 'CRM & Vendor Management'] 
+      isContactUs: true,
+      fAr: ['نظام مبيعات ومشتريات', 'نقاط بيع POS ذكية', 'الفاتورة الإلكترونية ZATCA', 'إدارة العملاء والموردين','تقارير المبيعات والمشتريات  المتقدمة '], 
+      fEn: ['Sales & Buying System', 'Smart POS Systems', 'ZATCA E-Invoicing', 'CRM & Vendor Management','Advanced Sales & Purchasing Reports'] 
     },
     { 
       nameAr: 'باقة الأعمال', 
@@ -94,7 +94,7 @@ export class DcgERP implements OnInit {
       old: '8,000', 
       popular: false, 
       maintenance: '1,500',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['كل مزايا باقة التجارة', 'المحاسبة المالية المتكاملة', 'إدارة المخازن والمستودعات','إدارة المبيعات والمشتريات', 'تقارير مالية ومحاسبية متقدمة'], 
       fEn: ['All Trade Pack features', 'Integrated Accounting', 'Inventory Management','Sales & Purchasing','Advanced Financial Reports'] 
     },
@@ -105,8 +105,8 @@ export class DcgERP implements OnInit {
       old: '15,000', 
       popular: true, 
       maintenance: '2,500',
-      isContactUs: false,
-      fAr: ['كل مزايا باقة الأعمال', 'نظام الموارد البشرية HR', 'إدارة الرواتب والعمليات', 'إدارة الأصول والصلاحيات'], 
+      isContactUs: true,
+      fAr: ['كل مزايا باقة الأعمال', 'نظام الموارد البشرية HR', 'إدارة الرواتب والعمليات', 'إدارة الأصول والصلاحيات', 'تقارير الموارد البشرية والرواتب'], 
       fEn: ['All Business features', 'Human Resources System', 'Payroll Management', 'Asset & Permissions Mgmt'] 
     },
     { 
@@ -123,7 +123,8 @@ export class DcgERP implements OnInit {
         'إدارة المشاريع والمقاولات', 
         'إدارة الجودة والصيانة',
         'ربط التجارة الإلكترونية API', 
-        'مزامنة المخزون (E-commerce Core)'
+        'مزامنة المخزون (E-commerce Core)',
+        'جميع التقارير المتقدمة'
       ], 
       fEn: [
         'All Business Pro features', 
@@ -131,7 +132,8 @@ export class DcgERP implements OnInit {
         'Project Management', 
         'Quality & Maintenance',
         'E-commerce API Integration', 
-        'Stock Sync (E-commerce Core)'
+        'Stock Sync (E-commerce Core)',
+        'All Advanced Reports'
       ] 
     }
   ];
