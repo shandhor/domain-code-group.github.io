@@ -8,6 +8,7 @@ import { SeoService } from "../services/SeoService";
 })  
 export class DcgERP implements OnInit {
   isArabic = true; // التحكم في اللغة
+  billingCycle: 'lifetime' | 'monthly' = 'lifetime'; // التحكم في نوع الدفع
   slotsTotal = 50;
   slotsTaken = 42;
 
@@ -16,6 +17,7 @@ export class DcgERP implements OnInit {
       hero: { badge: 'مستقبل الإدارة الذكية', title: 'نظام دومين كود الإداري', subtitle: 'حلول ERP المتطورة لإدارة منشأتك من شاشة واحدة بدقة متناهية.', cta: 'استكشف العروض' },
       featuresTitle: 'مميزات نظام DomainCode',
       pricingTitle: 'امتلك نظامك للأبد بسعر الإطلاق',
+      pricingSubtitle: 'حرية الاختيار لك: امتلك نظامك للأبد بسعر الإطلاق، أو اختر خططنا الشهرية والسنوية المرنة.',
       whyDcg: 'لماذا نقدم هذه الأسعار؟',
       whyDcgDesc: 'نحن في مجموعة دومين كود نهدف لدعم التحول الرقمي للمنشآت السعودية وفق رؤية 2030.',
       footer: 'جميع الحقوق محفوظة لنظام DomainCode - 2026'
@@ -23,9 +25,10 @@ export class DcgERP implements OnInit {
     en: {
       hero: { badge: 'FUTURE OF SMART MANAGEMENT', title: 'DomainCode ERP SYSTEM', subtitle: 'Advanced ERP solutions to manage your enterprise from a single screen with high precision.', cta: 'Explore Offers' },
       featuresTitle: 'DomainCode Core Features',
-      pricingTitle: 'Own Your System Forever - Launch Price',
+      pricingTitle: 'Own Your System Forever at Launch Price',
+      pricingSubtitle: 'Your choice: Own your system forever at launch price, or choose our flexible monthly and annual plans.',
       whyDcg: 'Why these prices?',
-      whyDcgDesc: 'At Range Code Group, we aim to support the digital transformation of Saudi enterprises in line with Vision 2030.',
+      whyDcgDesc: 'At Domain Code Group, we aim to support the digital transformation of Saudi enterprises in line with Vision 2030.',
       footer: 'All Rights Reserved for DomainCode System - 2026'
     }
   };
@@ -86,8 +89,9 @@ export class DcgERP implements OnInit {
     { 
       nameAr: 'باقة التجارة', 
       nameEn: 'Trade Pack', 
-      price: '1000', 
-      old: '2000', 
+      price: '1,000', 
+      old: '2,000', 
+      monthlyPrice: '99', // سعر الاشتراك الشهري
       popular: false, 
       maintenance: '500',
       isContactUs: true,
@@ -97,8 +101,9 @@ export class DcgERP implements OnInit {
     { 
       nameAr: 'باقة الأعمال', 
       nameEn: 'Business Basic', 
-      price: '5,000', 
+      price: '2,450', 
       old: '8,000', 
+      monthlyPrice: '450', // سعر الاشتراك الشهري
       popular: false, 
       maintenance: '1,500',
       isContactUs: true,
@@ -110,6 +115,7 @@ export class DcgERP implements OnInit {
       nameEn: 'Business Pro', 
       price: '8,500', 
       old: '15,000', 
+      monthlyPrice: '750', // سعر الاشتراك الشهري
       popular: true, 
       maintenance: '2,500',
       isContactUs: true,
@@ -121,9 +127,10 @@ export class DcgERP implements OnInit {
       nameEn: 'Ultimate Pack', 
       price: null, 
       old: null, 
+      monthlyPrice: null, // لا يوجد سعر ثابت، تواصل معنا
       popular: false, 
       maintenance: '3,500',
-      isContactUs: true, // إضافة هذا المؤشر لاستخدامه في قالب HTML
+      isContactUs: true, 
       fAr: [
         'كل مزايا الأعمال Pro', 
         'إدارة التصنيع والإنتاج', 
@@ -147,8 +154,14 @@ export class DcgERP implements OnInit {
 
   toggleLang() { this.isArabic = !this.isArabic; }    
   
+  setBillingCycle(cycle: 'lifetime' | 'monthly') {
+    this.billingCycle = cycle;
+  }
+
   onBuy(pkg: string) {
-    const msg = `مرحباً DomainCode، أود الاستفادة من عرض: ${pkg}`;
+    // تحديد ما إذا كان العميل اختار تمليك أو اشتراك ليظهر في الرسالة
+    const cycleType = this.billingCycle === 'lifetime' ? 'تمليك مدى الحياة' : 'اشتراك';
+    const msg = `مرحباً DomainCode، أود الاستفادة من عرض: ${pkg} (نظام ${cycleType})`;
     window.open(`https://wa.me/966561316069?text=${encodeURIComponent(msg)}`, '_blank');
   }
 
@@ -156,9 +169,9 @@ export class DcgERP implements OnInit {
 
   ngOnInit(): void {
     this.seo.updateMetaTags({
-      title: 'نظام DomainCode ERP المتكامل | تمليك لمرة واحدة بدون اشتراك شهري',
-      description: 'النظام الأقوى لإدارة المبيعات، المستودعات، والموارد البشرية مع ربط مباشر للمتاجر الإلكترونية (سلة وزد). احصل على عرض التمليك المحدود الآن.',
-      keywords: 'نظام ERP تمليك، برنامج محاسبة سحابي، ربط سلة وزد، الفاتورة الإلكترونية السعودية، نظام إدارة مصانع',
+      title: 'نظام DomainCode ERP المتكامل | تمليك لمرة واحدة أو اشتراكات مرنة',
+      description: 'النظام الأقوى لإدارة المبيعات، المستودعات، والموارد البشرية. تمليك مدى الحياة بسعر الإطلاق أو باقات اشتراك شهرية مرنة. احجز نسختك الآن.',
+      keywords: 'نظام ERP تمليك، برنامج محاسبة سحابي، اشتراك ERP شهري، ربط سلة وزد، الفاتورة الإلكترونية السعودية',
       image: 'https://domaincodegroup.com/assets/images/logo.png'
     });
     this.seo.updateCanonicalUrl('https://domaincodegroup.com/app/dcgERP');

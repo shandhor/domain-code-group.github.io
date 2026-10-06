@@ -93,7 +93,7 @@ export class DcgAI implements OnInit {
       old: '8,000',
       popular: false,
       maintenance: '1,000',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['استشارة AI أولية', 'دراسة جدوى تقنية', 'نموذج تجريبي (POC)', 'تقرير توصيات مفصل'],
       fEn: ['Initial AI consultation', 'Technical feasibility study', 'Proof of Concept (POC)', 'Detailed recommendations report']
     },
@@ -104,7 +104,7 @@ export class DcgAI implements OnInit {
       old: '25,000',
       popular: true,
       maintenance: '3,500',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['كل مزايا الاستكشاف', 'تطوير حل AI مخصص', 'تكامل مع نظامك الحالي', 'تدريب الفريق', 'دعم فني 3 أشهر'],
       fEn: ['All Exploration features', 'Custom AI solution development', 'Integration with existing systems', 'Team training', '3-month support']
     },
@@ -115,7 +115,7 @@ export class DcgAI implements OnInit {
       old: '55,000',
       popular: false,
       maintenance: '8,000',
-      isContactUs: false,
+      isContactUs: true,
       fAr: ['كل مزايا التطبيق', 'استضافة سحابية آمنة', 'مراقبة الأداء 24/7', 'تحديثات النموذج الدورية', 'دعم فني سنة كاملة'],
       fEn: ['All Implementation features', 'Secure cloud hosting', '24/7 performance monitoring', 'Regular model updates', 'Full year support']
     },
