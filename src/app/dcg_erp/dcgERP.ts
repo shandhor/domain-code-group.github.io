@@ -31,6 +31,13 @@ export class DcgERP implements OnInit {
   };
 
   features = [
+     { 
+      ar: 'نقطة البيع (POS)', 
+      en: 'Point of Sale (POS)', 
+      icon: '🧾', 
+      detailsAr: ['فواتير البيع السريعة', 'إدارة الخصومات والمبالغ النقدية', 'تتبع المبيعات اليومية والرصيد'], 
+      detailsEn: ['Fast Sales Invoicing', 'Discounts & Cash Management', 'Daily Sales Tracking & Balance'] 
+    },
     { 
       ar: 'المحاسبة والأصول', 
       en: 'Accounting & Assets', 

@@ -29,7 +29,7 @@ whyUs = signal([
   ]);
   translations: any = {
     ar: {
-      nav: { home: 'الرئيسية', services: 'خبراتنا', erp: 'نظام ERP',dcgCommerce: 'التجارة الإلكترونية', dcgAI: 'الذكاء الاصطناعي', consulting: 'الاستشارات', contact: 'اتصل بنا' },
+      nav: { home: 'الرئيسية', services: 'خبراتنا', pos: 'نقاط البيع', erp: 'نظام ERP',dcgCommerce: 'التجارة الإلكترونية', dcgAI: 'الذكاء الاصطناعي', consulting: 'الاستشارات', contact: 'اتصل بنا' },
       hero: {
         badge: 'شريكك الرقمي الموثوق',
         title: 'نحول <span class="gradient-text">الأفكار</span> إلى أكواد <br> وواقع رقمي مبهر',
@@ -110,7 +110,7 @@ whyUs = signal([
       footer: { copy: '© 2026 جميع الحقوق محفوظة لشركة Domain Code Group' }
     },
     en: {
-      nav: { home: 'Home', services: 'Expertise',  erp: 'ERP System', dcgCommerce: 'DCG Commerce', dcgAI: 'DCG AI', consulting: 'Consulting', contact: 'Contact' },
+      nav: { home: 'Home', services: 'Expertise', pos: 'POS', erp: 'ERP System', dcgCommerce: 'DCG Commerce', dcgAI: 'DCG AI', consulting: 'Consulting', contact: 'Contact' },
       hero: {
         badge: 'Your Trusted Digital Partner',
         title: 'Turning <span class="gradient-text">Ideas</span> into Code <br> and Stunning Digital Reality',
